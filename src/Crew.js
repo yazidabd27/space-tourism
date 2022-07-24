@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-import useFetch from "./useFetch";
+import data from "./myData.json"
 
 const Crew = () => {
 
-    const {data:crew}=useFetch('http://localhost:8000/crew');
-
-    const[role, setRole]=useState('');
-    const[name, setName]=useState('');
-    const[bio, setBio]=useState('');
-    const[image, setImage]=useState('');
-
-    const[active, setActive]=useState('');
+    const[role, setRole]=useState(data.crew[0].role);
+    const[name, setName]=useState(data.crew[0].name);
+    const[bio, setBio]=useState(data.crew[0].bio);
+    const[image, setImage]=useState(data.crew[0].images.png);
+    const[active, setActive]=useState(0);
 
     const handleClick=(c, index)=>{
         setRole(c.role);
@@ -18,13 +15,7 @@ const Crew = () => {
         setBio(c.bio);
         setImage(c.images.png);
         setActive(index);
-    }
-
-    useEffect(()=>{
-        if(crew){
-            handleClick(crew[0], 0)
-        }
-    },[crew]) 
+    } 
 
     return (
         <div className="crew">
@@ -37,9 +28,9 @@ const Crew = () => {
                 <div className="name">{name}</div>
                 <p className="bio">{bio}</p>
                 <div className="bullets">
-                    {crew && crew.map((c,index)=>(
+                    {data.crew.map((c,index)=>(
                         <span key={index} onClick={()=>handleClick(c, index)} className={active===index ? 'active' : null}></span>
-                    ))
+                        ))
                     }
                 </div>
             </div>

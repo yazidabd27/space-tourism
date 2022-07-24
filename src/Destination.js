@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
-import useFetch from "./useFetch";
+import data from "./myData.json"
 
 const Destination = () => {
-
-    const {data:destinations}=useFetch('http://localhost:8000/destinations');
-
-    const[image, setImage]=useState('');
-    const[name, setName]=useState('');
-    const[description, setDescription]=useState('');
-    const[distance, setDistance]=useState('');
-    const[travel, setTravel]=useState('');
-
     
+    const[image, setImage]=useState(data.destinations[0].images.png);
+    const[name, setName]=useState(data.destinations[0].name);
+    const[description, setDescription]=useState(data.destinations[0].description);
+    const[distance, setDistance]=useState(data.destinations[0].distance);
+    const[travel, setTravel]=useState(data.destinations[0].travel);
     const[active, setActive]=useState(0);
 
     const handleClick=(destination,index)=>{
@@ -22,12 +18,6 @@ const Destination = () => {
         setTravel(destination.travel);
         setActive(index)
     };
-
-    useEffect(()=>{
-        if(destinations){
-            handleClick(destinations[0], 0)
-        }
-    },[destinations]);
 
     return (
         <div className="destination">
@@ -41,7 +31,7 @@ const Destination = () => {
             </div>
             <div className="details">
                 <ul>
-                    {destinations && destinations.map((destination, index) =>(
+                    {data.destinations.map((destination, index) =>(
                         <li key={index} onClick={()=>handleClick(destination, index)} className={active===index ? 'active' : null}>{destination.name}</li>
                         ))
                     }

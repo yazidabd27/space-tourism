@@ -1,30 +1,21 @@
 import { useEffect, useState } from "react";
-import useFetch from "./useFetch";
+import data from "./myData.json"
 
 const Technology = () => {
 
-    const {data:technologies}=useFetch('http://localhost:8000/technology');
+    const[name, setName]=useState(data.technology[0].name);
+    const[description, setDescription]=useState(data.technology[0].description);
+    const[landscapeImage, setlandscapeImage]=useState(data.technology[0].images.landscape);
+    const[portraitImage, setportraitImage]=useState(data.technology[0].images.portrait);
+    const[active, setActive]=useState(0);
 
-    const[name, setName]=useState('');
-    const[description, setDescription]=useState('');
-    const[landscapeImage, setlandscapeImage]=useState('');
-    const[portraitImage, setportraitImage]=useState('');
-
-    const[active, setActive]=useState('');
-
-    const handleClick=(technology, index)=>{
-        setName(technology.name);
-        setDescription(technology.description);
-        setlandscapeImage(technology.images.landscape);
-        setportraitImage(technology.images.portrait);
+    const handleClick=(tech, index)=>{
+        setName(tech.name);
+        setDescription(tech.description);
+        setlandscapeImage(tech.images.landscape);
+        setportraitImage(tech.images.portrait);
         setActive(index);
-    }
-
-    useEffect(()=>{
-        if(technologies){
-            handleClick(technologies[0], 0);
-        };
-    },[technologies]);
+    };
 
     return (
         <div className="technology">
@@ -34,8 +25,8 @@ const Technology = () => {
             </h6>
             <div className="details">
                 <div className="bullets">
-                    {technologies && technologies.map((technology, index)=>(
-                        <span key={index} onClick={()=>handleClick(technology, index)} className={index===active ? 'active' : null}>{index+1}</span>
+                    {data.technology.map((tech, index)=>(
+                        <span key={index} onClick={()=>handleClick(tech, index)} className={index===active ? 'active' : null}>{index+1}</span>
                     ))}
                 </div>
                 <div className="terminology">THE TERMINOLOGY…</div>
