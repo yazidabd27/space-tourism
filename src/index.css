@@ -1,13 +1,786 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+*{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Bellefair', serif;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* app style */
+
+.destination h6,
+.crew h6,
+.technology h6{
+  position: absolute;
+  top: 170px;
+  left: 160px;
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: 4.725px;
+  text-transform: uppercase;
+}
+
+.App h6 span{
+  font-weight: 700;
+  opacity: 0.25;
+  margin-right: 20px;
+}
+
+.App p{
+  font-family: 'Barlow Condensed';
+  font-size: 18px;
+  color: #D0D6F9;
+  line-height: 25px;
+}
+
+/* navbar style */
+
+.navbar{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 55px);
+  left: 55px;
+  top: 40px;
+}
+.navbar .links{
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(81.5485px);
+}
+
+.navbar .links a{
+  padding: 30px 0;
+  margin: 0 20px;
+  height: 80px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Barlow Condensed';
+  line-height: 19px;
+  letter-spacing: 2.7px;
+}
+
+.navbar .links a.active{
+  border-bottom: 3px solid #fff;
+}
+
+.navbar .links a:not(.active):hover{
+  border-bottom: 3px solid rgba(255, 255, 255, .25);
+}
+
+.navbar .line{
+  position: absolute;
+  width: 28%;
+  height: 1px;
+  background-color: #fff;
+  left: 120px;
+  top: 50%;
+  z-index: 100;
+  opacity: .30;
+}
+
+/* home style */
+
+.home{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100vh;
+  background: url("C:\Users\LENOVO\Desktop\my projects\test\public\assets\home\background-home-desktop.jpg");
+  padding: 0 165px;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .travel-space{
+  width: 450px;
+  margin-bottom: 100px;
+}
+
+.home h6{
+  display: block;
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  color: #D0D6F9;
+  letter-spacing: 4.725px;
+}
+
+.home h1{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 172px;
+}
+
+.home .explore{
+  width: 270px;
+  height: 270px;
+  background-color: #fff;
+  color: #0B0D17;
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 37px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.home .box-shadow{
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 400px;
+  margin-bottom: 35px;
+}
+
+.home .box-shadow:hover{
+  background-color: rgba(255, 255, 255, .1);
+}
+
+/* destination style */
+
+.destination{
+  height: 100vh;
+  background: url("C:\Users\LENOVO\Desktop\my projects\test\public\assets\destination\background-destination-desktop.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.destination .destination-img{
+  position: absolute;
+  top: 250px;
+  left: 250px;
+}
+.destination .destination-img img{
+  width: 320px;
+}
+
+.destination .details{
+  position: absolute;
+  top: 220px;
+  right: 166px;
+  width: 400px;
+}
+
+.destination ul{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.destination ul li{
+  list-style: none;
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2.7px;
+  color: #D0D6F9;
+  margin-right: 30px;
+  padding-bottom: 10px;
+  height: 35px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.destination ul li.active{
+  border-bottom: solid 3px #fff;
+}
+
+.destination ul li:not(.active):hover{
+  border-bottom: solid 3px rgba(255, 255, 255, .5);
+}
+
+.destination .details h1{
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 110px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.destination .description{
+  height: 100px;
+}
+
+.destination .details hr{
+  opacity: .1;
+  margin: 30px 0 20px;
+}
+
+.destination .details .average-distance{
+  float: left;
+  margin-right: 50px;
+}
+
+.destination .details > div{
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 2.3625px;
+  text-transform: uppercase;
+  color: #D0D6F9;
+}
+
+.destination .details > div > div{
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 10px;
+}
+
+/* crew style */
+
+.crew{
+  height: 100vh;
+  background: url("C:\Users\LENOVO\Desktop\my projects\test\public\assets\crew\background-crew-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.crew .details{
+  position: absolute;
+  top: 300px;
+  left: 160px;
+}
+
+
+.crew .role{
+  font-size: 25px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.crew .name{
+  margin-top: 10px;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.crew .bio{
+  margin-top: 20px;
+  width: 360px;
+  height: 125px;
+}
+
+.crew .bullets{
+  width: 80px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.crew .bullets span{
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.17;
+  cursor: pointer;
+}
+
+.crew .bullets span.active{
+  opacity: 1;
+}
+
+.crew .bullets span:not(.active):hover{
+  opacity: .5;
+}
+
+.crew .crew-img{
+  position: absolute;
+  right: 150px;
+  bottom: 0;
+}
+
+.crew .crew-img img{
+  height: calc(100vh - 170px);
+}
+
+/*technology style */
+
+.technology{
+  height: 100vh;
+  background: url("C:\Users\LENOVO\Desktop\my projects\test\public\assets\technology\background-technology-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.technology .tech-img .landscape-image{
+  display: none;
+}
+
+.technology .details{
+  position: absolute;
+  top: 300px;
+  left: 160px;
+}
+
+.technology .bullets{
+  float: left;
+}
+
+.technology .bullets span{
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.technology .bullets span:not(.active):hover{
+  border: 1px solid #fff;
+}
+
+.technology .bullets span.active{
+  background-color: #fff;
+  color: black;
+}
+
+.technology .terminology{
+  font-family: 'Barlow Condensed';
+  font-size: 14px;
+  letter-spacing: 2.7px;
+  color: #D0D6F9;
+  margin-left: 120px;
+}
+
+.technology .name{
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-left: 120px;
+  margin-top: 10px;
+}
+
+.technology .description{
+  width: 380px;
+  margin-left: 120px;
+  margin-top: 15px;
+}
+
+.technology .tech-img{
+  position: absolute;
+  right: 0;
+  top: 200px;
+}
+
+.technology .tech-img img{
+  width: 380px;
+}
+
+@media (max-width:912px) {
+
+  .home,.destination,.crew{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* navbar */
+  .navbar{
+    top: 0;
+  }
+
+  .navbar .line{
+    display: none;
+  }
+
+  .navbar .links{
+    width: 70%;
+  }
+
+  .navbar .links a{
+    padding-top: 50px;
+    padding-bottom: 60px;
+    font-size: 14px;
+  }
+
+  /* home */
+  .home{
+    background: url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\home\background-home-tablet.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .home .travel-space{
+    margin-top: 300px;
+    text-align: center;
+  }
+
+  /* destination */
+  .destination{
+    background: url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\destination\background-destination-tablet.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .App h6{
+    left: 40px;
+  }
+
+  .destination .destination-img,
+  .destination .details{
+    position: relative;
+    left: 0;
+  }
+
+  .destination .destination-img img{
+    width: 300px;
+    height: 300px;
+  }
+
+  .destination .details{
+    text-align: center;
+    margin-top: 70px;
+    width: 500px;
+  }
+
+  .destination .details ul{
+    justify-content: center;
+  }
+
+  .destination .travel-time{
+    float:right;
+  }
+
+  /*crew*/
+  .crew{
+    background: url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\crew\background-crew-tablet.jpg');
+    background-size: cover;
+    background-position: center;
+    justify-content: space-between;
+  }
+
+  .crew .details,
+  .crew .crew-img{
+    position: relative;
+    left: 0;
+  }
+
+  .crew .details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .crew .bio{
+    width: 530px;
+    height: 96px;
+    line-height: 32px;
+  }
+
+  .crew .bullets{
+    margin-top: 30px;
+  }
+
+  .crew .crew-img{
+    margin-top: 164px;
+  }
+
+  .crew .crew-img img{
+    height: 430px;
+  }
+  
+  /* technology */
+  .technology{
+    background: url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\technology\background-technology-tablet.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .technology .tech-img .portrait-image{
+    display: none;
+  }
+
+  .technology .tech-img .landscape-image{
+    display: block;
+  }
+
+  .technology .details,
+  .technology .tech-img{
+    position: relative;
+    left: 0;
+    text-align: center;
+  }
+
+  .technology .details{
+    top: 25%;
+  }
+
+  .technology .tech-img{
+    margin-top: 70px;
+  }
+
+  .technology .tech-img img{
+    width: 100%;
+  }
+
+  .technology .details .bullets{
+    float: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technology .details > div{
+    margin-left: 0;
+  }
+
+  .technology .details p{
+    margin-left: 0;
+    width: 500px;
+  }
+
+  .technology .bullets span{
+    margin:0 10px;
+  }
+
+  .technology .terminology{
+    margin-top: 50px;
+  }
+
+}
+
+@media (max-width:412px) {
+
+  .App h6,
+  .App p{
+    font-size: 15px;
+  }
+
+  .App .details{
+    margin-top: 20px;
+    top: 0;
+  }
+  
+  .App p{
+    padding: 0 90px;
+  }
+  
+  .App .name{
+    font-size: 24px;
+  }
+
+  /* navbar */
+  .navbar{
+    height: 100vh;
+    left: 30px;
+    width: calc(100% - 30px);
+    overflow: hidden;
+  }
+
+  .navbar .links{
+    transform: translateX(100%);
+    position: absolute;
+    height: 100vh;
+    flex-direction: column;
+    right: 0;
+    z-index: 100;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: .5s;
+  }
+
+  .navbar .links.show{
+    transform: translateX(0);
+  }
+
+  .navbar .links a{
+    padding: 20px 0 20px 10px;
+    height: fit-content;
+  }
+
+  .navbar .links a.active{
+    border: none;
+  }
+
+  .logo,
+  .hamburger-icon{
+    top: 30px;
+    position: absolute;
+  }
+
+  .hamburger-icon{
+    top: 40px;
+    right: 30px;
+    display: block !important;
+  }
+
+  .close-icon{
+    display: block !important;
+    position: absolute;
+    right: 20px;
+    top: 30px; 
+  }  
+
+  /* home */
+  .home{
+    background: url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\home\background-home-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-end;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .home h1{
+    font-size: 80px;
+    line-height: 120px;
+  }
+
+  .home .explore{
+    width: 150px;
+    height: 150px;
+    font-size: 20px;
+  }
+
+  /* destination */
+  .destination{
+    background: url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\destination\background-destination-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 100px;
+  }
+
+  .destination-img img{
+    width: 170px !important;
+    height: 170px !important;
+  }
+
+  .destination-img{
+    margin-top: 15px;
+    top: 0 !important;
+  }
+
+  .destination h1{
+    font-size: 56px !important;
+    line-height: 64px !important; 
+  }
+
+  .destination h6{
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  .destination hr{
+    width: 65%;
+    margin-left: 17.5% !important;
+
+  }
+
+  .destination .average-distance,
+  .destination .travel-time{
+    float:none !important;
+    margin-right: 0 !important;
+    margin-bottom: 30px;
+  }
+
+  /* crew */
+  .crew{
+    background:url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\crew\background-crew-mobile.jpg') ;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .crew h6{
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    top: 15%;
+  }
+
+  .crew-img{
+    top: -50px !important;
+    width: 327px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+
+  }
+
+  .crew-img img{
+    height: 222px !important;
+  }
+
+  .crew .role{
+    font-size: 16px;
+  }
+
+  .crew .bullets{
+    position: absolute;
+    top: -70px;
+  }
+
+  /* technolog */
+  .technology{
+    background: url('C:\Users\LENOVO\Desktop\my projects\test\public\assets\technology\background-technology-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .technology h6{
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    top: 15%;
+  }
+
+  .tech-img{
+    top: 85px !important;
+  }
+
+  .technology .details{
+    top: 100px;
+  }
+
+  .technology .terminology{
+    margin-top: 30px;
+  }
 }
